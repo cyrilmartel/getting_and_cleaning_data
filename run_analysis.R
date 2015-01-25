@@ -1,5 +1,6 @@
 ## As explained in the assignment, it is assumed that the folder "UCI HAR Dataset" containing the Samsung data is in your Working Directory. 
 
+
 ##loading the package dplyr
 library(dplyr)
 
@@ -56,4 +57,4 @@ data3 <- group_by(data2, Activity, Subject)
 data4 <- summarise_each(data3, funs(mean))
 
 ##creating a .txt file containing the final tidy dataset.
-write.table("project.txt", row.name=FALSE)
+write.table(data4, "project.txt", row.name=FALSE)
